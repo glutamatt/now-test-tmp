@@ -1,6 +1,7 @@
 package main
 
 import (
+	"crypto/tls"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -26,6 +27,7 @@ func main() {
 
 	content := "<style type=\"text/css\">" + string(css) + "</style>" + string(page)
 
+	http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 	onlineAssets := map[string]string{
 		"/sound.mp3":      "https://raw.githubusercontent.com/glutamatt/now-test-tmp/fe19110e57d1c5cdf80c19f9c232ced3c7b41efd/sound.mp3",
 		"/background.jpg": "https://raw.githubusercontent.com/glutamatt/now-test-tmp/fe19110e57d1c5cdf80c19f9c232ced3c7b41efd/background.jpg",
