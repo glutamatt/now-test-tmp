@@ -1,4 +1,5 @@
 {
+    "alias": ["@lulz-domain-alias"],
     "env": {
         "GA_TAG": "@lulz-ga-tag"
     }
