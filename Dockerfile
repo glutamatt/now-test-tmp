@@ -1,3 +1,3 @@
 FROM glutamatt/lolstream:latest
-# trigger deploy of latest
+LABEL version="1.0"
 EXPOSE 443
